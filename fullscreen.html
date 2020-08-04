@@ -1,0 +1,26 @@
+<div class="btn_container" id="fullscreen_btn">
+  <div class="btn_box">
+    <div class="btn">
+      <button onclick="openFullscreen();">FullScreen</button>
+    </div>
+  </div>
+</div>
+<script>
+  var elem = document.getElementById("fullscreen");
+  function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      /* Chrome, Safari & Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+    var fullscreen_btn = document.getElementById("fullscreen_btn");
+    fullscreen_btn.style.display = "none";
+  }
+</script>
